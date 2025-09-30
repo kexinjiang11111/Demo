@@ -8,7 +8,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
 from DynamicRNN import DynamicRNN
-from adgcnModel import ADGCN  # 新增导入
+from GraphModel import ADGCN  # 新增导入
 
 class dualModel(nn.Module):
     def __init__(self, opt, n_vocab, embed_list):
@@ -122,5 +122,6 @@ class BiRNN_dualModel(nn.Module):
         r_s = torch.sum(output_pad, dim=1).transpose(0, 1) / length_tensor
         r_s = r_s.transpose(0, 1)
       
+
 
         return r_s
