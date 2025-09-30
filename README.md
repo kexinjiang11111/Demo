@@ -4,7 +4,7 @@ This repository provides the official implementation of the paper:
 
 **"A Multi-Channel Sarcasm Detection Model Integrating Syntax and Semantics"**
 
-## 🏃 Running the Model (One-Click)
+## 🏃 Running the Model 
 
 You can follow the full pipeline with the commands below.  
 Just copy and paste the block to run all steps in order:
@@ -32,6 +32,7 @@ python evaluate.py --checkpoint checkpoints/best_model.pt --dataset IAC1
 - Transformers
 - NLTK / SpaCy (for POS tagging)
 - SenticNet (for sentiment word detection)
+
 
 
 
