@@ -1,132 +1,26 @@
-# Overview
-Here is the source code for our NAACL 2022 paper A Dual-Channel Framework for Sarcasm Recognition by Detecting Sentiment Conflict.
+# Multi-Channel Sarcasm Detection
 
-## Run the scripts
+This repository provides the official implementation of the paper:
 
-Please modify the parameters in `train.sh` and run `sh train.sh`. 
-
-## Experiments
-
-### \* Datasets
-
-We evaluate our model on three benchmark datasets, IAC-V1, IAC-V2, Twitter. The split datasets are in `/data`. 
-
-The official websites for datasets:
-- IAC-V1: https://nlds.soe.ucsc.edu/sarcasm1
-- IAC-V2: https://nlds.soe.ucsc.edu/sarcasm2
-- Twitter: https://github.com/Cyvhee/SemEval2018-Task3
-
-### \* Main results
-
-<table>
-    <tr>
-        <td rowspan="2">Model</td>
-        <td colspan="2">IAC-V1</td>
-        <td colspan="2">IAC-V2</td>
-        <td colspan="2">Tweets</td>
-    </tr>
-    <tr>
-        <td>F1</td>
-        <td>Acc.</td>
-        <td>F1</td>
-        <td>Acc.</td>
-        <td>F1</td>
-        <td>Acc.</td>
-    </tr>
-    <tr>
-        <td>UCDCC</td>
-        <td>58.5</td>
-        <td>58.5</td>
-        <td>67.0</td>
-        <td>67.0</td>
-        <td>72.4</td>
-        <td>79.7</td>
-    </tr>
-    <tr>
-        <td>THU-NGN</td>
-        <td>64.2</td>
-        <td>64.3</td>
-        <td>73.3</td>
-        <td>73.3</td>
-        <td>70.5</td>
-        <td>73.5</td>
-    </tr>
-    <tr>
-        <td>Bi-LSTM</td>
-        <td>64.6</td>
-        <td>64.6</td>
-        <td>79.7</td>
-        <td>79.7</td>
-        <td>71.7</td>
-        <td>73.0</td>
-    </tr>
-    <tr>
-        <td>At-LSTM</td>
-        <td>65.3</td>
-        <td>65.5</td>
-        <td>76.1</td>
-        <td>76.2</td>
-        <td>70.0</td>
-        <td>70.2</td>
-    </tr>
-    <tr>
-        <td>CNN-LSTM-DNN</td>
-        <td>60.9</td>
-        <td>61.1</td>
-        <td>75.2</td>
-        <td>75.3</td>
-        <td>71.9</td>
-        <td>72.3</td>
-    </tr>
-    <tr>
-        <td>MIARN</td>
-        <td>64.9</td>
-        <td>65.2</td>
-        <td>75.2</td>
-        <td>75.3</td>
-        <td>68.8</td>
-        <td>70.2</td>
-    </tr>
-    <tr>
-        <td>ADGCN</td>
-        <td>64.3</td>
-        <td>64.3</td>
-        <td>80.9</td>
-        <td>80.9</td>
-        <td>72.8</td>
-        <td>73.6</td>
-    </tr>
-    <tr>
-        <td>DC-Net (Ours)</td>
-        <td>66.4</td>
-        <td>66.5</td>
-        <td>82.1</td>
-        <td>82.1</td>
-        <td>76.3</td>
-        <td>76.7</td>
-    </tr>
-</table>
+**"A Multi-Channel Sarcasm Detection Model Integrating Syntax and Semantics"**
 
 
-## Citation
-```
-@inproceedings{DBLP:conf/naacl/LiuWSMLG22,
-  author    = {Yiyi Liu and
-               Yequan Wang and
-               Aixin Sun and
-               Xuying Meng and
-               Jing Li and
-               Jiafeng Guo},
-  title     = {A Dual-Channel Framework for Sarcasm Recognition by Detecting Sentiment
-               Conflict},
-  booktitle = {Findings of the Association for Computational Linguistics: {NAACL}
-               2022, Seattle, WA, United States, July 10-15, 2022},
-  pages     = {1670--1680},
-  publisher = {Association for Computational Linguistics},
-  year      = {2022},
-  url       = {https://doi.org/10.18653/v1/2022.findings-naacl.126},
-  doi       = {10.18653/v1/2022.findings-naacl.126},
-  biburl    = {https://dblp.org/rec/conf/naacl/LiuWSMLG22.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
-}
-```
+
+
+
+## 📊 Results
+Our model achieves state-of-the-art or competitive results in terms of **accuracy** and **F1-score**, outperforming several strong baselines including DCNet, ADGCN, and SarcPrompt-Clash-RoBERTa.
+
+## 📂 Repository Structure
+- `dataname/` : Preprocessed datasets used in experiments.
+
+- `dataUtils/` : Helper functions (data loader, preprocessing, etc.).
+
+## ⚙️ Requirements
+- Python 3.8+
+- PyTorch >= 1.10
+- Transformers
+- NLTK / SpaCy (for POS tagging)
+- SenticNet (for sentiment word detection)
+
+
