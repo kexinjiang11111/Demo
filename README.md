@@ -4,17 +4,27 @@ This repository provides the official implementation of the paper:
 
 **"A Multi-Channel Sarcasm Detection Model Integrating Syntax and Semantics"**
 
+## 🏃 Running the Model (One-Click)
 
+You can follow the full pipeline with the commands below.  
+Just copy and paste the block to run all steps in order:
 
+```bash
+# 1️⃣ Data Preprocessing
+python preprocess.py --input data/raw/ --output data/processed/
 
+# 2️⃣ Dependency Graph Construction
+python dependency_graph.py --input data/processed/ --output data/graphs/dependency/
 
-## 📊 Results
-Our model achieves state-of-the-art or competitive results in terms of **accuracy** and **F1-score**, outperforming several strong baselines including DCNet, ADGCN, and SarcPrompt-Clash-RoBERTa.
+# 3️⃣ Sentiment Graph Construction
+python sentic_graph.py --input data/processed/ --output data/graphs/sentic/
 
-## 📂 Repository Structure
-- `dataname/` : Preprocessed datasets used in experiments.
+# 4️⃣ Train the Model
+bash train.sh
 
-- `dataUtils/` : Helper functions (data loader, preprocessing, etc.).
+# 5️⃣ Evaluate the Model
+python evaluate.py --checkpoint checkpoints/best_model.pt --dataset IAC1
+
 
 ## ⚙️ Requirements
 - Python 3.8+
@@ -22,5 +32,6 @@ Our model achieves state-of-the-art or competitive results in terms of **accurac
 - Transformers
 - NLTK / SpaCy (for POS tagging)
 - SenticNet (for sentiment word detection)
+
 
 
