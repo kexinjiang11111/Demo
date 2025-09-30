@@ -11,13 +11,13 @@ Just copy and paste the block to run all steps in order:
 
 ```bash
 # 1️⃣ Data Preprocessing
-python preprocess.py --input data/raw/ --output data/processed/
+python preprocess.py 
 
 # 2️⃣ Dependency Graph Construction
-python dependency_graph.py --input data/processed/ --output data/graphs/dependency/
+python dependency_graph.py 
 
 # 3️⃣ Sentiment Graph Construction
-python sentic_graph.py --input data/processed/ --output data/graphs/sentic/
+python sentic_graph.py 
 
 # 4️⃣ Train the Model
 bash train.sh
@@ -32,6 +32,7 @@ python evaluate.py --checkpoint checkpoints/best_model.pt --dataset IAC1
 - Transformers
 - NLTK / SpaCy (for POS tagging)
 - SenticNet (for sentiment word detection)
+
 
 
 
